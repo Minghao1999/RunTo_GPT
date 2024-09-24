@@ -13,4 +13,10 @@ router.get('/', async (request,response)=>{
     }
 })
 
-router.post('/', async (request,response))
+router.post('/', async (request,response)=>{
+    const {text, sender} = request.body
+
+    try{
+        const newMessage = new Message({})
+    }
+})
