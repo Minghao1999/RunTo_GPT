@@ -1,3 +1,5 @@
 const mongoose = require('mongoose')
 
-const messageSchema = 
+const messageSchema = new mongoose.Schema({
+    
+})
