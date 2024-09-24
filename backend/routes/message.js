@@ -12,3 +12,5 @@ router.get('/', async (request,response)=>{
         response.status(500).json({error: 'Failed to fetch messages'})
     }
 })
+
+router()
