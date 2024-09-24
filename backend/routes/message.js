@@ -23,6 +23,6 @@ router.post('/', async (request,response)=>{
             timestamp: new Date()
         })
         const savedMessage = await newMessage.save()
-        
+        response.status(201)
     }
 })
