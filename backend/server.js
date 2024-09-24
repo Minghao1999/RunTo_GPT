@@ -22,5 +22,5 @@ const messageRoutes = require('./routes/message')
 app.use('/api/messages', messageRoutes)
 
 app.listen(PORT, ()=>{
-    console.log(`Server is runing on port `)
+    console.log(`Server is running on port `)
 })
