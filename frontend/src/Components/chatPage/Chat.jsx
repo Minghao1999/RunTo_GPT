@@ -1,5 +1,6 @@
-import React, {useState} from "react";
-import '../UI/Chat.css'
+import React, {useEffect, useState} from "react";
+import '../../UI/Chat.css'
+import {getMessages, postMessage} from "../../API/MessageAPI.js";
 
 const Chat = ()=>{
     const [message, setMessage] = useState([
@@ -16,6 +17,18 @@ const Chat = ()=>{
             }, 1000)
         }
     }
+
+    useEffect(() => {
+        const getMessage = async ()=>{
+            try{
+                const messagesData = await getMessages()
+                setMessage(messagesData)
+            }catch (err){
+                console.error('Failed to fetch messages:',err)
+            }
+        }
+        getMessage()
+    }, []);
 
     return(
         <div className="chat-container">

@@ -1,6 +1,6 @@
-import Navbar from "./landingPage/Navbar.jsx"
-import Hero from "./landingPage/Hero.jsx"
-import Chat from "./chatPage/Chat.jsx"
+import Navbar from "./Components/landingPage/Navbar.jsx"
+import Hero from "./Components/landingPage/Hero.jsx"
+import Chat from "./Components/chatPage/Chat.jsx"
 import {BrowserRouter as Router, Route, Routes, useNavigate} from "react-router-dom"
 function Home(){
     const navigate = useNavigate()

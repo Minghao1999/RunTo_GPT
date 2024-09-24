@@ -1,5 +1,5 @@
 import React from "react"
-import '../UI/Hero.css'
+import '../../UI/Hero.css'
 
 const Hero = ({onClickTry}) =>{
     return(
