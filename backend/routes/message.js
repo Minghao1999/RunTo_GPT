@@ -5,5 +5,7 @@ const axios = require('axios')
 const {response} = require("express")
 
 router.get('/', async (request,response)=>{
-    
+    try{
+        const messages = await Message.find().sort({timestamp: 1})
+    }
 })
