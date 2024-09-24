@@ -24,5 +24,8 @@ router.post('/', async (request,response)=>{
         })
         const savedMessage = await newMessage.save()
         response.status(201).json(savedMessage)
+    }catch (err){
+        console.log('Error saving message:', err)
+        response.status()
     }
 })
