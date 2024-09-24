@@ -1,7 +1,5 @@
 # RunTo GPT
 
-# To run the project locally:
-
 # Environment Variables
 
 Create a _**.env**_ file in backend directories. You need set up your MongoDB URI and OpenAI API in **_.env_** file
