@@ -13,4 +13,4 @@ router.get('/', async (request,response)=>{
     }
 })
 
-router()
+router.post('/')
