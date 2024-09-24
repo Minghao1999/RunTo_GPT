@@ -17,6 +17,10 @@ router.post('/', async (request,response)=>{
     const {text, sender} = request.body
 
     try{
-        const newMessage = new Message({})
+        const newMessage = new Message({
+            text,
+            sender,
+            timestamp: new Date()
+        })
     }
 })
