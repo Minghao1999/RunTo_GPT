@@ -9,6 +9,6 @@ router.get('/', async (request,response)=>{
         const messages = await Message.find().sort({timestamp: 1})
         response.json(messages)
     }catch (err){
-        response.status(500).json
+        response.status(500).json({error: 'Failed to fetch messages'})
     }
 })
