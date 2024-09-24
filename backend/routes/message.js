@@ -30,3 +30,4 @@ router.post('/', async (request,response)=>{
     }
 })
 
+module.exports = router()
