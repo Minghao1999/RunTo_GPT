@@ -26,6 +26,6 @@ router.post('/', async (request,response)=>{
         response.status(201).json(savedMessage)
     }catch (err){
         console.log('Error saving message:', err)
-        response.status()
+        response.status(500).json({error:'Failed to save message'})
     }
 })
