@@ -2,7 +2,7 @@
 
 # Environment Variables
 
-Create a _**.env**_ file in backend directories. You need set up your MongoDB URI and OpenAI API in **_.env_** file
+Create an _**.env**_ file in backend directories. You need set up your MongoDB URI and OpenAI API in **_.env_** file
 
 # Frontend
 
@@ -28,4 +28,4 @@ Create a _**.env**_ file in backend directories. You need set up your MongoDB UR
     `npm i `
 3. Start the backend
 
-   `npm start`
+   `npm run dev`
