@@ -8,5 +8,7 @@ router.get('/', async (request,response)=>{
     try{
         const messages = await Message.find().sort({timestamp: 1})
         response.json(messages)
+    }catch (err){
+        
     }
 })
