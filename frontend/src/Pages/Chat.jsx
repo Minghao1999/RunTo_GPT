@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import '../../UI/Chat.css'
-import {getMessages, postMessage} from "../../API/MessageAPI.js";
+import '../UI/Chat.css'
+import {getMessages, postMessage} from "../API/MessageAPI.js";
 
 const Chat = ()=>{
     const [message, setMessage] = useState([

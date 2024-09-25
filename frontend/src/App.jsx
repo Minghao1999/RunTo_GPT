@@ -1,14 +1,13 @@
-import Navbar from "./Components/landingPage/Navbar.jsx"
-import Hero from "./Components/landingPage/Hero.jsx"
-import Chat from "./Components/chatPage/Chat.jsx"
+import Navbar from "./Components/Navbar.jsx"
+import Home from "./Pages/Home.jsx"
+import Chat from "./Pages/Chat.jsx"
 import {BrowserRouter as Router, Route, Routes, useNavigate} from "react-router-dom"
-function Home(){
+function Hero(){
     const navigate = useNavigate()
 
     return(
         <div>
-            <Navbar/>
-            <Hero onClickTry = {()=>navigate('/chat')}/>
+            <Home onClickTry = {()=>navigate('/chat')}/>
         </div>
     )
 }
@@ -17,7 +16,7 @@ function App(){
     return(
         <Router>
             <Routes>
-                <Route path='/' element={<Home/>}/>
+                <Route path='/' element={<Hero/>}/>
                 <Route path='/chat' element={<Chat/>}/>
             </Routes>
         </Router>

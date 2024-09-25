@@ -1,7 +1,7 @@
 import React from "react"
-import '../../UI/Hero.css'
+import '../UI/Hero.css'
 
-const Hero = ({onClickTry}) =>{
+const Home = ({onClickTry}) =>{
     return(
         <div className="hero">
             <h1>Welcome to RunTo GPT</h1>
@@ -11,4 +11,4 @@ const Hero = ({onClickTry}) =>{
     )
 }
 
-export default Hero
+export default Home
