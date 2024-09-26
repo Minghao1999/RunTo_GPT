@@ -31,7 +31,7 @@ router.post('/', async (request,response)=>{
         }else {
             res.json(newMessage)
         }
-    }catch (){
+    }catch (err){
 
     }
 })
