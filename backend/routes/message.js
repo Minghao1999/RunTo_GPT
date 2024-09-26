@@ -21,11 +21,7 @@ router.post('/', async (request,response)=>{
             text,
             sender
         })
-        const savedMessage = await newMessage.save()
-        response.status(201).json(savedMessage)
-    }catch (err){
-        console.log('Error saving message:', err)
-        response.status(500).json({error:'Failed to save message'})
+        sponse.status(500).json({error:'Failed to save message'})
     }
 })
 
