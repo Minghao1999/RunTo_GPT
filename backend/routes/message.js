@@ -23,7 +23,9 @@ router.post('/', async (request,response)=>{
         })
         await newMessage.save()
 
-        if (sender === 'user')
+        if (sender === 'user'){
+            const botResponse = await 
+        }
     }catch (){
 
     }
