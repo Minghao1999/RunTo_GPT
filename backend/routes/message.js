@@ -32,7 +32,7 @@ router.post('/', async (request,response)=>{
             response.json(newMessage)
         }
     }catch (err){
-        response.status(500)
+        response.status(500).json({error: 'Failed to send message'})
     }
 })
 
