@@ -36,6 +36,8 @@ router.post('/', async (request,response)=>{
     }
 })
 
-const getBotResponse = async (userInput)
+const getBotResponse = async (userInput) =>{
+    
+}
 
 module.exports = router
