@@ -41,6 +41,8 @@ const getBotResponse = async (userInput) =>{
         const response = await axios.post('https://api.openai.com/v1/chat/completions',{
             models: 'ft:gpt-4o-mini-2024-07-18:personal::ABYV0zxI',
             message: [{role: 'user', content: userInput}]
+        },{
+            
         })
     }
 }
