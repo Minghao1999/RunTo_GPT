@@ -13,7 +13,7 @@ router.get('/api/messages', async (request,response)=>{
     }
 })
 
-router.post('/', async (request,response)=>{
+router.post('/api/messages', async (request,response)=>{
     const {text, sender} = request.body
 
     try{
