@@ -36,6 +36,6 @@ router.post('/', async (request,response)=>{
     }
 })
 
-const get
+const getBotResponse = async (userInput)
 
 module.exports = router
