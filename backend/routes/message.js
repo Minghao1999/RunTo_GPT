@@ -37,7 +37,9 @@ router.post('/', async (request,response)=>{
 })
 
 const getBotResponse = async (userInput) =>{
-    
+    try{
+        const response = await 
+    }
 }
 
 module.exports = router
