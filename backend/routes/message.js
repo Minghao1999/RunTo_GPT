@@ -51,7 +51,7 @@ const getBotResponse = async (userInput) =>{
         return botReply
     }catch (err){
         console.error('Error calling OpenAI API:', err)
-        return 'sorry, can not '
+        return 'sorry, can not process your request'
     }
 }
 
