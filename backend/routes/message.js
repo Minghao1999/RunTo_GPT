@@ -32,7 +32,7 @@ router.post('/', async (request,response)=>{
             response.json(newMessage)
         }
     }catch (err){
-        response.status()
+        response.status(500)
     }
 })
 
