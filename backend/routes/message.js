@@ -4,7 +4,7 @@ const Message = require('../models/Message')
 const axios = require('axios')
 const {response} = require("express")
 
-router.get('/api/messages', async (request,response)=>{
+router.get('', async (request,response)=>{
     try{
         const messages = await Message.find().sort({timestamp: 1})
         response.json(messages)
@@ -13,7 +13,7 @@ router.get('/api/messages', async (request,response)=>{
     }
 })
 
-router.post('/api/messages', async (request,response)=>{
+router.post('', async (request,response)=>{
     const {text, sender} = request.body
 
     try{
