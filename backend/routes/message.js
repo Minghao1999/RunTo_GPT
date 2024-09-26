@@ -19,8 +19,7 @@ router.post('/', async (request,response)=>{
     try{
         const newMessage = new Message({
             text,
-            sender,
-            timestamp: new Date()
+            sender
         })
         const savedMessage = await newMessage.save()
         response.status(201).json(savedMessage)
