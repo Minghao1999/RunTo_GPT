@@ -20,7 +20,7 @@ router.post('/', async (request,response)=>{
         const newMessage = new Message({
             text,
             sender
-        
+        )}
     }
 })
 
