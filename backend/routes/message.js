@@ -47,6 +47,7 @@ const getBotResponse = async (userInput) =>{
                 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
             }
         })
+        const botReply = response.data.choices[0].message.content.trim()
     }
 }
 
