@@ -29,7 +29,7 @@ router.post('/', async (request,response)=>{
             await botMessage.save()
             response.json(botMessage)
         }else {
-            res.json(newMessage)
+            response.json(newMessage)
         }
     }catch (err){
         response
