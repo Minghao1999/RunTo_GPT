@@ -22,6 +22,8 @@ router.post('/', async (request,response)=>{
             sender
         })
         await newMessage.save()
+
+        if (sender)
     }catch (){
 
     }
