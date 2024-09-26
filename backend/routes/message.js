@@ -50,7 +50,7 @@ const getBotResponse = async (userInput) =>{
         const botReply = response.data.choices[0].message.content.trim()
         return botReply
     }catch (err){
-        console.error()
+        console.error('Error calling OpenAI API')
     }
 }
 
