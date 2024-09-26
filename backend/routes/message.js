@@ -21,7 +21,6 @@ router.post('/', async (request,response)=>{
             text,
             sender
         })
-        sponse.status(500).json({error:'Failed to save message'})
     }
 })
 
