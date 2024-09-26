@@ -28,6 +28,8 @@ router.post('/', async (request,response)=>{
             const botMessage = new Message({text: botResponse, sender: 'bot'})
             await botMessage.save()
             response.json(botMessage)
+        }else {
+            res.json
         }
     }catch (){
 
