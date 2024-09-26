@@ -21,7 +21,9 @@ router.post('/', async (request,response)=>{
             text,
             sender
         })
-    }catch ()
+    }catch (){
+        
+    }
 })
 
 module.exports = router
