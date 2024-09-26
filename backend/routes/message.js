@@ -44,7 +44,7 @@ const getBotResponse = async (userInput) =>{
         },{
             headers:{
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer $`
+                'Authorization': `Bearer ${po}`
             }
         })
     }
