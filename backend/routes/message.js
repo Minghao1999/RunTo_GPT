@@ -38,7 +38,9 @@ router.post('/', async (request,response)=>{
 
 const getBotResponse = async (userInput) =>{
     try{
-        const response = await axios.post('https://api.openai.com/v1/chat/completions')
+        const response = await axios.post('https://api.openai.com/v1/chat/completions',{
+            models: ''
+        })
     }
 }
 
