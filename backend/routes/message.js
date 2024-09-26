@@ -23,7 +23,7 @@ router.post('/', async (request,response)=>{
         })
         await newMessage.save()
 
-        if (sender)
+        if (sender === 'user')
     }catch (){
 
     }
