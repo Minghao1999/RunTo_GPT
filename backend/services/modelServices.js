@@ -9,10 +9,10 @@ const pinecone = new Pinecone({
 })
 
 const getPineconeContext = async (queryText) => {
-    const index = pinecone.Index('runto');
+    const index = pinecone.Index('minghao');
     const queryEmbedding = await getEmbeddings(queryText);
 
-    const queryResponse = await index.namespace('test').query({
+    const queryResponse = await index.namespace('pet').query({
         vector: queryEmbedding,
         topK: 3,
         includeMetadata: true,
@@ -45,11 +45,27 @@ const getBotResponse = async (contextMessages) => {
 
         const retrievedContext = await getPineconeContext(userQuestion);
 
+        const systemContext = [
+            { role: 'system', content: `
+                Your name is RunTo.
+                You are an assistant whose knowledge is limited to the information provided in the vector database and general knowledge about cats and dogs.
+                You must prioritize using the retrieved context from the database to answer the user's question.
+                
+                Rules:
+                - If the answer can be found in the retrieved context, respond using that context.
+                - If the question is about cats or dogs and the answer is not available in the context, you may use your general knowledge about cats or dogs to answer.
+                - For questions unrelated to cats or dogs, and if no relevant information is found in the context, respond with "I'm sorry, I don't have that information."
+               
+            `}
+        ]
+
         contextMessages.push({ role: 'system', content: `Relevant information: ${retrievedContext}` });
+
+        const finalMessages = [...systemContext, ...contextMessages];
 
         const response = await openai.post('https://api.openai.com/v1/chat/completions', {
             model: 'gpt-3.5-turbo',
-            messages: contextMessages
+            messages: finalMessages
         }, {
             headers: {
                 'Content-Type': 'application/json',

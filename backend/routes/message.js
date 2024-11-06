@@ -5,7 +5,16 @@ const {getBotResponse} = require('../services/modelServices')
 
 router.get('', async (request,response)=>{
     try{
-        const messages = await Message.find().sort({timestamp: 1})
+        const messages = await Message.aggregate([
+            {
+                $group: {
+                    _id: {$dateToString: {format: "%Y-%m-%d", date: "$timestamp"}},
+                    messages: {$push: {text: "$text", sender: "$sender", timestamp: "$timestamp"}}
+                }
+            },
+            {$sort: {"_id": 1}}
+        ])
+
         response.json(messages)
     }catch (err){
         response.status(500).json({error: 'Failed to fetch messages'})
