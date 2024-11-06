@@ -57,21 +57,27 @@ const Chat = () => {
         setIsSideNavOpen(!isSideNavOpen);
     };
 
-    useEffect(() => {
-        messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, [message]);
+    const goToHero = () => {
+        setLanding(true);
+        setMessage([])
+        setIsSideNavOpen(false);
+    }
 
     return (
         <div className="chat-container">
-            <button className="toggle-btn outside" onClick={toggleSideNav}>
-                Open
+            {/* Toggle Button for Sidebar */}
+            <button className="toggle-btn" onClick={toggleSideNav}>
+                {isSideNavOpen ? "Close" : "Open"}
             </button>
+
             <Navbar
                 historyMessages={historyMessages}
                 onDateSelect={handleSelectDateMessages}
                 isOpen={isSideNavOpen}
                 toggleSideNav={toggleSideNav}
+                goToHero={goToHero}
             />
+
             <div className={`chat-content ${isSideNavOpen ? 'sidenav-open' : ''}`}>
                 {message && message.length > 0 ? (
                     <>
@@ -82,6 +88,7 @@ const Chat = () => {
                     <Landing />
                 )}
             </div>
+
             <div className="chat-input">
                 <input
                     type="text"

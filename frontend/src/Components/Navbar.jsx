@@ -1,16 +1,21 @@
 import React from "react";
 import '../UI/Navbar.css';
 
-const Navbar = ({ historyMessages, onDateSelect, isOpen, toggleSideNav }) => {
+const Navbar = ({historyMessages, onDateSelect, isOpen, toggleSideNav, goToHero }) => {
+
     const handleDateClick = (date) => {
         onDateSelect(date, historyMessages[date]);
+        toggleSideNav(historyMessages[date]);
     };
 
     return (
         <div className={`sidenav ${isOpen ? 'open' : 'closed'}`}>
-            <button className="toggle-btn inside" onClick={toggleSideNav}>
-                close
-            </button>
+            <div className="button-container">
+                <button className="hero-btn inside" onClick={goToHero}>
+                    Back to Home
+                </button>
+            </div>
+
             {isOpen && (
                 <>
                     <h3 className="history-text">History</h3>
