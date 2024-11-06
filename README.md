@@ -1,5 +1,5 @@
 # RunTo GPT
-
+![IMG](frontend/assets/show.png)
 # Environment Variables
 
 Create an _**.env**_ file in backend directories. You need set up your MongoDB URI and OpenAI API in **_.env_** file as .env_example file
